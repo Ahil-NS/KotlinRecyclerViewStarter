@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinRecyclerViewStarter</string>
+    <string name="technology_image">Technology image</string>
 </resources>
