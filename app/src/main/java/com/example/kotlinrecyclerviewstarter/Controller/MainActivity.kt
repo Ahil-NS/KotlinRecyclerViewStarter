@@ -1,7 +1,8 @@
-package com.example.kotlinrecyclerviewstarter
+package com.example.kotlinrecyclerviewstarter.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.kotlinrecyclerviewstarter.R
 
 class MainActivity : AppCompatActivity() {
 
