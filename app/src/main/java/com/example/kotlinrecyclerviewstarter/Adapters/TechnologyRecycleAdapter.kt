@@ -11,11 +11,11 @@ import com.example.kotlinrecyclerviewstarter.Model.Technology
 import com.example.kotlinrecyclerviewstarter.R
 import kotlinx.android.synthetic.main.technology_item.view.*
 
-class TechnologyRecycleAdapter(val context: Context, val technologies: List<Technology>): RecyclerView.Adapter<TechnologyRecycleAdapter.Holder>() {
+class TechnologyRecycleAdapter(val context: Context, val technologies: List<Technology>, val itemClick: (Technology) -> Unit): RecyclerView.Adapter<TechnologyRecycleAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.technology_item,parent,false)
-        return Holder(view)
+        return Holder(view,itemClick)
     }
 
     override fun getItemCount(): Int {
@@ -26,7 +26,7 @@ class TechnologyRecycleAdapter(val context: Context, val technologies: List<Tech
        holder.bindTechnology(technologies[position],context)
     }
 
-    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class Holder(itemView: View, val itemClick: (Technology) -> Unit) : RecyclerView.ViewHolder(itemView) {
         val technologyImage = itemView.findViewById<ImageView>(R.id.technologyImage)
         val technologyTitle = itemView.findViewById<TextView>(R.id.technologyName)
 
@@ -36,6 +36,10 @@ class TechnologyRecycleAdapter(val context: Context, val technologies: List<Tech
             technologyImage?.setImageResource(resourceId)
 
             technologyTitle?.text = technology.title
+
+            itemView.setOnClickListener {
+                itemClick(technology)
+            }
         }
 
     }
