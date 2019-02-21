@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">KotlinRecyclerViewStarter</string>
     <string name="technology_image">Technology image</string>
+    <string name="languages">Languages</string>
+    <string name="language_image">Language Image</string>
 </resources>

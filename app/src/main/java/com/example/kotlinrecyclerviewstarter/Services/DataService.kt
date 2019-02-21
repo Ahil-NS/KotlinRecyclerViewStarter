@@ -10,9 +10,19 @@ object DataService {
         Technology("Android","android_img"),
         Technology("iOS","ios_img"),
         Technology("Flutter","flutter_img")
+
     )
 
     val androidLanguages = listOf(
+        Language("Java","android_img"),
+        Language("Kotlin","android_img"),
+        Language("XML","android_img"),
+        Language("Java","android_img"),
+        Language("Kotlin","android_img"),
+        Language("XML","android_img"),
+        Language("Java","android_img"),
+        Language("Kotlin","android_img"),
+        Language("XML","android_img"),
         Language("Java","android_img"),
         Language("Kotlin","android_img"),
         Language("XML","android_img")
@@ -26,4 +36,16 @@ object DataService {
     val flutterLanguages = listOf(
         Language("Dart","flutter_img")
     )
+
+    val emptyLanguages = listOf<Language>()
+
+    fun getLanguage(tech : String) : List<Language>{
+
+        return when(tech){
+            "Android" -> androidLanguages
+            "iOS" -> iosLanguages
+            "Flutter" -> flutterLanguages
+            else -> emptyLanguages
+        }
+    }
 }

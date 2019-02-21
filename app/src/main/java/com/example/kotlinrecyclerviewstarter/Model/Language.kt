@@ -1,4 +1,4 @@
 package com.example.kotlinrecyclerviewstarter.Model
 
-class Language(title: String, image: String) {
+class Language(val title: String, val image: String) {
 }
